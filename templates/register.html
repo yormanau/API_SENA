@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h3>Registrarse</h3>
+
+    <form id="registerForm">
+        <input type="text" name="username" placeholder="Usuario" required>
+        <input type="password" name="password" placeholder="Contraseña" required>
+
+        <button type="submit" class="btn-register">Crear cuenta</button>
+    </form>
+
+    <div id="errorMessage" style="display:none; color:#e74c3c; margin-top:10px;">
+    </div>
+
+    <div id="toast" class="toast">
+        <strong id="toastTitle"></strong>
+        <span id="toastMessage"></span>
+    </div>
+
+
+    <a href="/login">¿Ya tienes cuenta? Inicia sesión</a>
+</div>
+
+</body>
+<script src="{{ url_for('static', filename='js/toast.js') }}"></script>
+<script src="{{ url_for('static', filename='js/register.js') }}"></script>
+</html>

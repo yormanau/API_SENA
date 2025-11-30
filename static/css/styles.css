@@ -1,0 +1,104 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+    background: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    width: 320px;
+    box-shadow: 0 2px 9px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+input,
+button {
+    width: 90%;
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Inputs */
+input {
+    border: 1px solid #ccc;
+}
+
+/* Botón general */
+button {
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Botón login */
+button.btn-login {
+    background: #007bff;
+}
+
+button.btn-login:hover {
+    background: #0056b3;
+}
+
+/* Botón registro */
+button.btn-register {
+    background: #28a745;
+}
+
+button.btn-register:hover {
+    background: #1e7e34;
+}
+
+a {
+    display: block;
+    margin-top: 15px;
+    text-align: center;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.username-blue {
+    color: #007bff;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.toast {
+    visibility: hidden;
+    min-width: 250px;
+    background-color: #2ecc71;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 15px;
+    position: fixed;
+    z-index: 10;
+    left: 50%;
+    top: -80px;
+    transform: translateX(-50%);
+    font-size: 16px;
+    opacity: 0;
+    transition: opacity .5s, top .5s;
+}
+
+.toast.show {
+    visibility: visible;
+    opacity: 1;
+    top: 30px;
+}

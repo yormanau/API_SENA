@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio de sesión</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h3>Iniciar sesión</h3>
+
+    <form id="loginForm">
+        <input type="text" name="username" placeholder="Usuario" required>
+        <input type="password" name="password" placeholder="Contraseña" required>
+
+        <button type="submit" class="btn-login">Ingresar</button>
+    </form>
+
+    <div id="errorMessage" style="display:none; color:#e74c3c; margin-top:10px;">
+    </div>
+
+    <a href="/register">¿No tienes cuenta? Regístrate</a>
+</div>
+</body>
+<script src="{{ url_for('static', filename='js/login.js') }}"></script>
+</html>
