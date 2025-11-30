@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Título -->
+    <title>Home</title>
+
+    <!-- Hoja de estilos principal cargada desde /static/css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+<div class="container" style="text-align:center;">
+
+    <!-- Título principal mostrado en pantalla (también recibido del backend) -->
+    <h3>{{ title }}</h3>
+
+    <!-- Si el backend envía la variable 'username', se muestra aquí -->
+    {% if username %}
+        <p><strong class="username-blue">{{ username }}</strong></p>
+    {% endif %}
+
+    <!-- Mensaje dinámico que se muestra debajo del título -->
+    <p>{{ message }}</p>
+
+    <!-- Botón de retorno a la página de inicio de sesión -->
+    <!-- Se estiliza como botón usando la clase .btn-register del CSS -->
+    <a href="/login" class="btn-register" style="margin-top: 20px;">
+        Volver al inicio
+    </a>
+</div>
+
+</body>
+</html>

@@ -3,25 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Inicio de sesión</title>
+
+    <!-- Carga del archivo CSS desde la carpeta static/css -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
 
 <div class="container">
+    <!-- Título del formulario -->
     <h3>Iniciar sesión</h3>
 
+    <!-- Formulario de inicio de sesión -->
+    <!-- NO tiene action porque se manejará con JavaScript mediante fetch() -->
     <form id="loginForm">
+        <!-- Campo de texto para el nombre de usuario -->
         <input type="text" name="username" placeholder="Usuario" required>
+
+        <!-- Campo para la contraseña -->
         <input type="password" name="password" placeholder="Contraseña" required>
 
+        <!-- Botón para enviar el formulario -->
         <button type="submit" class="btn-login">Ingresar</button>
     </form>
-
-    <div id="errorMessage" style="display:none; color:#e74c3c; margin-top:10px;">
+    <!-- Componente de notificación tipo 'toast' -->
+    <!-- Se usa para mostrar mensajes flotantes de éxito -->
+    <div id="toast" class="toast">
+        <strong id="toastTitle"></strong>  <!-- Título del toast -->
+        <span id="toastMessage"></span>   <!-- Mensaje del toast -->
     </div>
 
+
+    <!-- Enlace para ir a la página de registro -->
     <a href="/register">¿No tienes cuenta? Regístrate</a>
 </div>
+
 </body>
+
+<!-- Archivo JavaScript que manejará la lógica del login (fetch, validaciones, etc.) -->
 <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+<script src="{{ url_for('static', filename='js/toast.js') }}"></script>
 </html>

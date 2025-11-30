@@ -3,33 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <title>Registro</title>
+
+    <!-- Carga del archivo CSS principal desde /static/css -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
 
 <div class="container">
+    <!-- Título de la página -->
     <h3>Registrarse</h3>
 
+    <!-- Formulario de registro -->
+    <!-- No usa action porque se maneja con JavaScript usando fetch() -->
     <form id="registerForm">
+
+        <!-- Campo para el nombre de usuario -->
         <input type="text" name="username" placeholder="Usuario" required>
+
+        <!-- Campo para la contraseña -->
         <input type="password" name="password" placeholder="Contraseña" required>
 
+        <!-- Botón para enviar el formulario -->
         <button type="submit" class="btn-register">Crear cuenta</button>
     </form>
 
+    <!-- Contenedor para mostrar mensajes de error -->
     <div id="errorMessage" style="display:none; color:#e74c3c; margin-top:10px;">
     </div>
 
+    <!-- Componente de notificación tipo 'toast' -->
+    <!-- Se usa para mostrar mensajes flotantes de éxito -->
     <div id="toast" class="toast">
-        <strong id="toastTitle"></strong>
-        <span id="toastMessage"></span>
+        <strong id="toastTitle"></strong>  <!-- Título del toast -->
+        <span id="toastMessage"></span>   <!-- Mensaje del toast -->
     </div>
 
-
+    <!-- Enlace para ir a la pantalla de inicio de sesión -->
     <a href="/login">¿Ya tienes cuenta? Inicia sesión</a>
 </div>
 
 </body>
+
+<!-- Script que controla el componente toast -->
 <script src="{{ url_for('static', filename='js/toast.js') }}"></script>
+
+<!-- Script que maneja el envío del formulario de registro -->
 <script src="{{ url_for('static', filename='js/register.js') }}"></script>
 </html>

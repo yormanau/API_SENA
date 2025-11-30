@@ -1,31 +1,36 @@
+/* Resetea el box-model para que padding y border no expandan el tamaño */
 * {
     box-sizing: border-box;
 }
 
+/* Estilos globales del body */
 body {
     margin: 0;
     padding: 0;
     font-family: Arial;
-    background: #f2f2f2;
-    display: flex;
+    background: #f2f2f2;            /* Fondo gris claro */
+    display: flex;                  /* Centrar contenido */
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100vh;                  /* Alto completo de la ventana */
 }
 
+/* Contenedor principal del formulario */
 .container {
     background: white;
     padding: 25px;
     border-radius: 8px;
     width: 320px;
-    box-shadow: 0 2px 9px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 9px rgba(0, 0, 0, 0.2); /* Sombra suave */
     text-align: center;
 }
 
+/* Título */
 h3 {
     text-align: center;
 }
 
+/* Inputs y botones comparten estilos de base */
 input,
 button {
     width: 90%;
@@ -37,34 +42,35 @@ button {
 
 /* Inputs */
 input {
-    border: 1px solid #ccc;
+    border: 1px solid #ccc;         /* Borde gris */
 }
 
-/* Botón general */
+/* Botones en general */
 button {
     color: white;
     border: none;
     cursor: pointer;
 }
 
-/* Botón login */
+/* Botón LOGIN */
 button.btn-login {
-    background: #007bff;
+    background: #007bff;            /* Azul */
 }
 
 button.btn-login:hover {
-    background: #0056b3;
+    background: #0056b3;            /* Azul más oscuro al pasar el mouse */
 }
 
-/* Botón registro */
+/* Botón REGISTRO */
 button.btn-register {
-    background: #28a745;
+    background: #28a745;            /* Verde */
 }
 
 button.btn-register:hover {
-    background: #1e7e34;
+    background: #1e7e34;            /* Verde más oscuro al pasar el mouse */
 }
 
+/* Estilos para enlaces */
 a {
     display: block;
     margin-top: 15px;
@@ -73,32 +79,45 @@ a {
     text-decoration: none;
 }
 
+/* Estilo para mostrar el username en azul y grande */
 .username-blue {
     color: #007bff;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 24px;                /* Tamaño más grande */
 }
 
+/* TOAST (notificación) */
 .toast {
-    visibility: hidden;
+    visibility: hidden;             /* Oculto inicialmente */
     min-width: 250px;
-    background-color: #2ecc71;
     color: white;
     text-align: center;
     border-radius: 6px;
     padding: 15px;
     position: fixed;
     z-index: 10;
-    left: 50%;
-    top: -80px;
+    left: 50%;                      /* Centrado horizontal */
+    top: -80px;                     /* Fuera de pantalla hacia arriba */
     transform: translateX(-50%);
     font-size: 16px;
-    opacity: 0;
-    transition: opacity .5s, top .5s;
+    opacity: 0;                     /* Totalmente invisible */
+    transition: opacity .5s, top .5s; /* Animación suave */
 }
 
+/* Cuando se activa el toast */
 .toast.show {
     visibility: visible;
     opacity: 1;
-    top: 30px;
+    top: 30px;                      /* Baja desde arriba */
+}
+
+
+/* === COLORES DINÁMICOS DEL TOAST === */
+
+.toast-success {
+    background-color: #2ecc71; /* Verde */
+}
+
+.toast-danger {
+    background-color: #e74c3c; /* Rojo */
 }
