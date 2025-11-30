@@ -51,7 +51,7 @@ def api_login():
     if not row:
         return jsonify({
             "success": False,
-            "message": "¡Credenciales incorrectas!"
+            "message": "El usuario no existe."
         }), 401
 
     # Contraseña almacenada en BD
